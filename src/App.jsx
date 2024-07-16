@@ -8,7 +8,6 @@ import { useEffect, useMemo, useState } from "react";
 import DynamicAppBar from "./components/DynamicAppBar";
 import SectionOne from "./components/SectionOne";
 import SectionTwo from "./components/SectionTwo";
-
 function App() {
   const [isTop, setIsTop] = useState(true);
 

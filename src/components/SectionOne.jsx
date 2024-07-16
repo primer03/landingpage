@@ -15,7 +15,10 @@ to {
 `;
 const pinkcolor = pink;
 const useMemoizedSkillList = () => {
-  return useMemo(() => ["Flutter", "React", "Node", "MongoDB"], []);
+  return useMemo(
+    () => ["Flutter", "React", "Supabase", "Laravel", "Nodejs"],
+    []
+  );
 };
 export default function SectionOne() {
   const skillList = useMemoizedSkillList();
@@ -148,22 +151,22 @@ export default function SectionOne() {
             <Typography variant="h2" color={grey[300]} fontWeight="bold">
               Developer
             </Typography>
-           <AttentionSeeker effect="rubberBand" delay={500}>
-           <Button
-              variant="contained"
-              color="secondary"
-             size="large"
-              sx={{
-                marginTop: 3,
-                "&:active":{
+            <AttentionSeeker effect="rubberBand" delay={500}>
+              <Button
+                variant="contained"
+                color="secondary"
+                size="large"
+                sx={{
+                  marginTop: 3,
+                  "&:active": {
                     transform: "scale(0.8)",
                     transition: "all 0.3s ease-in-out",
-                }
-              }}
-            >
-              Download CV
-            </Button>
-           </AttentionSeeker>
+                  },
+                }}
+              >
+                Download CV
+              </Button>
+            </AttentionSeeker>
           </Box>
         </AweSlide>
       </Box>
