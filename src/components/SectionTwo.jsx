@@ -1,5 +1,13 @@
 /* eslint-disable react/prop-types */
-import { Box, Stack, Typography, styled, Paper, useMediaQuery,useTheme } from "@mui/material";
+import {
+  Box,
+  Stack,
+  Typography,
+  styled,
+  Paper,
+  useMediaQuery,
+  useTheme,
+} from "@mui/material";
 import SocialBtn from "./SocialBtn";
 import { GitHub, Google, LinkedIn, Twitter } from "@mui/icons-material";
 import { pink } from "@mui/material/colors";
@@ -204,54 +212,60 @@ export default function SectionTwo() {
           flexWrap="wrap"
           justifyContent="center"
         >
-          <AweZoom damping={0.1} duration={800} cascade style={{
-            width: isMobile ? "100%" : "auto",
-          }} triggerOnce >
-          {lauguageList.map((item, index) => (
-            <Paper
-              key={index}
-              elevation={1}
-              sx={{
-                padding: "16px 45px 16px 20px",
-                boxSizing: "border-box",
-              }}
-              component="div"
-            >
-              <Stack direction="row" spacing={2}>
-                <Box
-                  component="img"
-                  src={item.icon}
-                  alt="android"
-                  width="40px"
-                ></Box>
-                <Stack direction="column" spacing={0}>
-                  <Typography
-                    variant="h6"
-                    sx={{
-                      fontWeight: "500",
-                      fontSize: "1rem",
-                      fontFamily: "kanit",
-                    }}
-                  >
-                    {item.name}
-                  </Typography>
-                  <Typography
-                    variant="p"
-                    fontFamily="kanit"
-                    sx={{
-                      fontSize: "12px",
-                      color: "#6f809b",
-                    }}
-                  >
-                    {item.perience}
-                  </Typography>
-                </Stack>
-              </Stack>
-            </Paper>
-          ))}
+          <AweZoom
+            damping={0.1}
+            duration={800}
+            cascade
+            style={{
+              width: isMobile ? "100%" : "auto",
+            }}
+            triggerOnce
+          >
+            {lauguageList.map((item,index) => (
+              <PaperSkill key={index} {...item} />
+            ))}
           </AweZoom>
         </Stack>
       </>
     </Box>
   );
 }
+
+const PaperSkill = (props) => {
+  return (
+    <Paper
+      elevation={1}
+      sx={{
+        padding: "16px 45px 16px 20px",
+        boxSizing: "border-box",
+      }}
+      component="div"
+    >
+      <Stack direction="row" spacing={2}>
+        <Box component="img" src={props.icon} alt="android" width="40px"></Box>
+        <Stack direction="column" spacing={0}>
+          <Typography
+            variant="h6"
+            sx={{
+              fontWeight: "500",
+              fontSize: "1rem",
+              fontFamily: "kanit",
+            }}
+          >
+            {props.name}
+          </Typography>
+          <Typography
+            variant="p"
+            fontFamily="kanit"
+            sx={{
+              fontSize: "12px",
+              color: "#6f809b",
+            }}
+          >
+            {props.perience}
+          </Typography>
+        </Stack>
+      </Stack>
+    </Paper>
+  );
+};
